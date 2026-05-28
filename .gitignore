@@ -64,3 +64,5 @@ temp/
 .pytest_cache/
 .coverage
 htmlcov/
+
+.vercel
