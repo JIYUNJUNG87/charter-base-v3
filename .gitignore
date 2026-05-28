@@ -21,20 +21,95 @@ dist/
 .vscode/
 .idea/
 *.swp
+*.swo
+*~
 .DS_Store
 Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+*.lnk
 
-# ===== Streamlit =====
-.streamlit/secrets.toml
+# ===== Node / JS (다른 도구 함께 쓸 때 대비) =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp/
+.pnp.js
+.npm/
+.yarn/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
 
 # ===== Claude Code 로컬 설정 =====
 .claude/
 
-# ===== 환경 변수 / 비밀 =====
+# ===== 환경 변수 / 비밀 (API 키·비밀번호·토큰·인증서) =====
+# .env 류
 .env
 .env.*
+*.env
+# 예시 템플릿은 허용 (실키가 없는 placeholder 파일만 커밋)
+!.env.example
+!.env.sample
+!.env.template
+
+# 인증서·키
 *.key
 *.pem
+*.crt
+*.cer
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# 자격 파일 (이름에 secret/credential/creds 포함)
+secrets.json
+secrets.yaml
+secrets.yml
+secret.json
+secret.yaml
+secret.yml
+credentials.json
+credentials.yaml
+credentials.yml
+creds.json
+creds.yaml
+creds.yml
+service-account*.json
+
+# SSH/PGP 키
+*_rsa
+*_rsa.pub
+*_ed25519
+*_ed25519.pub
+id_rsa*
+id_ed25519*
+*.gpg
+*.asc
+
+# 기타 인증
+.htpasswd
+.netrc
+auth.json
+.aws/
+.gcloud/
+.azure/
+
+# Streamlit / Hugging Face / 기타 도구의 비밀 파일
+.streamlit/secrets.toml
+.huggingface/
+.huggingface_token
+
+# Railway / Vercel / Heroku 로컬 비밀
+.railway/
+.vercel/.env*
+.netlify/
 
 # ===== 회사 운영 데이터 (절대 커밋 금지) =====
 # data/ 안은 전부 무시하되, 데모용 합성 데이터 폴더만 예외 허용
@@ -65,4 +140,11 @@ temp/
 .coverage
 htmlcov/
 
-.vercel
+# ===== Vercel 로컬 메타 (프로젝트 링크 정보) =====
+.vercel/
+
+# ===== 기타 백업/임시 =====
+*.bak
+*.orig
+*.rej
+*~$*       # 오피스 잠금 파일 (~$file.xlsx)
