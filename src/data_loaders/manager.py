@@ -16,6 +16,7 @@
     summary = mgr.service.get_service_summary("ANX")
 """
 
+import os
 from pathlib import Path
 from .bunker_loader import BunkerPriceLoader
 from .hire_loader import HireRateLoader
@@ -37,7 +38,17 @@ DEFAULT_FILES = {
 class MasterDataManager:
     """모든 마스터 데이터 로더의 통합 매니저"""
 
-    def __init__(self, master_dir: str | Path = "data/master"):
+    def __init__(self, master_dir: str | Path | None = None):
+        # 우선순위: 명시 인자 > 환경변수 > 기본 data/master > 폴백 data/master_demo
+        if master_dir is None:
+            env = os.getenv("CHARTERBASE_MASTER_DIR")
+            if env:
+                master_dir = env
+            elif Path("data/master").exists():
+                master_dir = "data/master"
+            else:
+                master_dir = "data/master_demo"
+
         self.master_dir = Path(master_dir)
         if not self.master_dir.exists():
             raise FileNotFoundError(f"마스터 디렉토리가 없습니다: {self.master_dir}")
