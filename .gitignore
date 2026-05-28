@@ -1,0 +1,58 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ===== Virtual environment =====
+venv/
+env/
+.venv/
+ENV/
+
+# ===== Build / dist =====
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ===== IDE / OS =====
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ===== Streamlit =====
+.streamlit/secrets.toml
+
+# ===== Claude Code 로컬 설정 =====
+.claude/
+
+# ===== 환경 변수 / 비밀 =====
+.env
+.env.*
+*.key
+*.pem
+
+# ===== 회사 운영 데이터 (절대 커밋 금지) =====
+# BUNKER(유가), HIRE(용선료), PORT_CHARGE(항비), SERVICE_LIST, vessel_spec 등
+# DATA_ISSUES.md 에도 실제 단가 샘플이 포함되어 있어 전체 제외
+data/
+*.xls
+*.xlsx
+*.xlsm
+*.csv
+*.parquet
+
+# ===== 로그 / 임시 =====
+*.log
+logs/
+tmp/
+temp/
+
+# ===== 테스트 결과물 =====
+.pytest_cache/
+.coverage
+htmlcov/
